@@ -18,8 +18,8 @@ namespace SpotifyDBAutomation
         public static string connectionstring= @"Data Source=(localdb)\MSSQLLocalDB;Database=spotify;Integrated Security=True;";
         SqlConnection connection = new SqlConnection(connectionstring);
 
-
-        public int InsertIntoTable(SpotifyModel model)
+        
+        public int InsertIntoTable(int a,String b,String c)
         {
             int count = 0;
             try
@@ -29,9 +29,9 @@ namespace SpotifyDBAutomation
                     SqlCommand InsertCommand = new SqlCommand("Insert INTO TrackTable (PlaylistId, TrackName, ArtistName) VALUES (@1, @2, @3)", connection);
 
                     //InsertCommand.Parameters.Add(new SqlParameter("1", "4"));
-                    InsertCommand.Parameters.Add(new SqlParameter("1", "2"));
-                    InsertCommand.Parameters.Add(new SqlParameter("2", "track7"));
-                    InsertCommand.Parameters.Add(new SqlParameter("3", "ABC"));
+                    InsertCommand.Parameters.Add(new SqlParameter("1",a));
+                    InsertCommand.Parameters.Add(new SqlParameter("2", b));
+                    InsertCommand.Parameters.Add(new SqlParameter("3", c));
 
                     
                     //Opening the connection
